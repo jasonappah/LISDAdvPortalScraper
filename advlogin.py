@@ -46,6 +46,6 @@ if (len(sys.argv) == 3 or len(sys.argv) == 4 or len(sys.argv) == 5):
 
 else:
     print("Usage: \n advlogin user pass campusno [-s] - saves credentials to file \n Campus Numbers:" )
-    campuses = {'Primary Campus': '0', 'Glenn HS' : '006', 'Wiley MS': ''}
+    campuses = {'Primary Campus': '0', 'Leander HS': '001', 'Cedar Park HS':'002', 'Vista Ridge HS': '003', 'Rouse HS':'004','Vandegrift HS':'005', 'Glenn HS' : '006', 'Cedar Park MS': '041', 'Leander MS': '042', 'Running Brushy MS': '043', 'Henry MS':'044', 'Canyon Ridge MS':'045', 'Wiley MS': '046', 'Four Points MS':'047', 'Stiles MS':'048'}
     for campus in campuses:
         print (campus + ": " + campuses[campus])
