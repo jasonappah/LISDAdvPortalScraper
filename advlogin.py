@@ -1,4 +1,4 @@
-import sys, requests
+import sys, requests, datetime
 
 if (len(sys.argv) == 3 or len(sys.argv) == 4 or len(sys.argv) == 5):
     class User:
@@ -32,17 +32,20 @@ if (len(sys.argv) == 3 or len(sys.argv) == 4 or len(sys.argv) == 5):
         student = User(sys.argv[1],sys.argv[2])
 
 
+    print("Logging in with the following credentials:")
     print(student.info())
     r = student.request()
-    print(r.text)
-    f = open("lADV-"+student.id+".html", "w+")
+    date = datetime.datetime.now()
+    f = open("lADV-"+student.id+"-"+str(date)+".html", "w+")
     f.write(r.text)
     f.close()
+    print("Saved HTML to " + f.name)
 
     if ("-s" in sys.argv):
         f = open("lADVcreds-"+student.id+".txt", "w+")
         f.write(student.info())
         f.close()
+        print("Saved creds to " + f.name)
 
 else:
     print("Usage: \n advlogin user pass campusno [-s] - saves credentials to file \n Campus Numbers:" )
